@@ -422,96 +422,33 @@ p {
   color: var(--ink-soft);
 }
 
-.hero-photo-grid {
+.hero-space {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: clamp(116px, 10vw, 156px);
-  gap: 16px;
-  padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.52);
-  border-radius: var(--radius-xl);
-  background:
-    linear-gradient(180deg, rgba(255, 252, 255, 0.78), rgba(248, 245, 255, 0.66)),
-    radial-gradient(circle at 82% 18%, rgba(247, 214, 238, 0.38), transparent 28%),
-    radial-gradient(circle at 22% 72%, rgba(201, 239, 248, 0.3), transparent 26%);
-  box-shadow: var(--shadow-strong);
-  overflow: hidden;
-  backdrop-filter: blur(24px);
+  min-height: clamp(360px, 42vw, 620px);
 }
 
-.hero-photo-grid::before {
+.hero-space::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 12% 10% 18% 6%;
   pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(108, 119, 182, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(108, 119, 182, 0.04) 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.3;
-}
-
-.hero-photo-grid::after {
-  content: "";
-  position: absolute;
-  inset: auto -16% -24% auto;
-  width: 260px;
-  height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0));
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
   filter: blur(14px);
-  opacity: 0.74;
+  opacity: 0.85;
+}
+
+.hero-space::after {
+  content: "";
+  position: absolute;
+  inset: auto 6% 4% auto;
+  width: 34%;
+  height: 34%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 239, 248, 0.48), rgba(201, 239, 248, 0));
+  filter: blur(22px);
+  opacity: 0.68;
   pointer-events: none;
-}
-
-.hero-photo-grid > * {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-photo {
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.54);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.76);
-  box-shadow:
-    0 20px 42px rgba(109, 121, 188, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.48);
-}
-
-.hero-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(1.02) contrast(1.02);
-}
-
-.hero-photo-a {
-  grid-column: span 2;
-  grid-row: span 2;
-  transform: translateY(10px) rotate(-1.4deg);
-}
-
-.hero-photo-b {
-  transform: translateY(-10px) rotate(1.3deg);
-}
-
-.hero-photo-c {
-  transform: translateY(8px) rotate(-0.8deg);
-}
-
-.hero-photo-d {
-  transform: translateY(-4px) rotate(1deg);
-}
-
-.hero-photo-e {
-  transform: translateY(12px) rotate(-1.1deg);
-}
-
-.hero-photo-f {
-  transform: translateY(-14px) rotate(1.5deg);
 }
 
 @keyframes dream-drift {
@@ -2076,7 +2013,7 @@ p {
     margin-top: 10px;
   }
 
-  .hero-photo-grid {
+  .hero-space {
     max-width: 760px;
   }
 
@@ -2133,19 +2070,8 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .hero-photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 128px;
-    padding: 16px;
-  }
-
-  .hero-photo {
-    transform: none !important;
-  }
-
-  .hero-photo-a {
-    grid-column: span 2;
-    grid-row: span 2;
+  .hero-space {
+    min-height: 280px;
   }
 
   .nodes-current {
@@ -2444,10 +2370,8 @@ p {
     font-size: clamp(3rem, 20vw, 4.5rem);
   }
 
-  .hero-photo-grid {
-    grid-auto-rows: 108px;
-    gap: 12px;
-    padding: 12px;
+  .hero-space {
+    min-height: 220px;
   }
 
   .signal-strip {
